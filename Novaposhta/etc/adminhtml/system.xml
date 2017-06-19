@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="carriers" translate="label" type="text" sortOrder="320" showInDefault="1" showInWebsite="1"
+                 showInStore="1">
+            <group id="novaposhta" translate="label" type="text" sortOrder="0" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Nova poshta</label>
+                <field id="enable" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1"
+                       showInStore="0">
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <label>Enabled</label>
+                </field>
+                <field id="api_key" translate="label" type="obscure" sortOrder="40" showInDefault="1" showInWebsite="1"
+                       showInStore="0">
+                    <label>Api Key</label>
+                    <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
+                </field>
+                <field showInStore="0" showInWebsite="1" showInDefault="1" sortOrder="90" type="select"
+                       translate="label" id="sallowspecific">
+                    <label>Ship to Applicable Countries</label>
+                    <frontend_class>shipping-applicable-country</frontend_class>
+                    <source_model>Magento\Shipping\Model\Config\Source\Allspecificcountries</source_model>
+                </field>
+                <field id="specificcountry" translate="label" type="multiselect" sortOrder="91" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Ship to Specific Countries</label>
+                    <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+                    <can_be_empty>1</can_be_empty>
+                </field>
+                <field showInStore="1" showInWebsite="1" showInDefault="1" sortOrder="80" type="textarea"
+                       translate="label" id="specific_error_msg">
+                    <label>Displayed Error Message</label>
+                </field>
+                <field id="weight_price" translate="label" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Weight Price</label>
+                    <frontend_model>Shipping\Novaposhta\Block\Adminhtml\System\Config\Form\Field\WeightPrice</frontend_model>
+                    <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
+                    <comment>
+                        <![CDATA[Ratio weight price]]>
+                    </comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

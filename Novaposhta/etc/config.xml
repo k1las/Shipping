@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <carriers>
+            <novaposhta>
+                <enable>1</enable>
+                <sallowspecific>1</sallowspecific>
+                <specificcountry>UA</specificcountry>
+                <model>Shipping\Novaposhta\Model\Carrier\Novaposhta</model>
+                <name>Новая Почта</name>
+                <title>Новая Почта</title>
+                <price>30.00</price>
+                <type>I</type>
+                <specific_error_msg>Этот способ доставки на текущий момент не доступен. Если вы желаете, чтобы мы доставили заказ Новой Почтой, обратитесь к менеджеру интернет-магазина.</specific_error_msg>
+            </novaposhta>
+        </carriers>
+    </default>
+</config>
